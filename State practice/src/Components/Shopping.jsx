@@ -29,7 +29,7 @@ const Shopping = () => {
            <div>
          {items.map((item,index)=>(
       <ul key={index}>
-        <li>Name:-{item.name}------ Quantity-{item.quantity}</li>
+        <li>Name:-{item.name}----- Quantity-{item.quantity}</li>
       </ul>
 
          ))}

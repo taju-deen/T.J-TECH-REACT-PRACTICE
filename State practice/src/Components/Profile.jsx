@@ -2,8 +2,10 @@ import React, { useState } from 'react'
 
 const Profile= () => {
 
+
+
     const[userInfo,setUserInfo]=useState({
-        name:" ",
+        name:"",
         age:"",
         hobby:""
     })
