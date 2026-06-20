@@ -3,9 +3,9 @@ import React, { useState } from 'react'
 const Profile= () => {
 
     const[userInfo,setUserInfo]=useState({
-        name:"Tajudeen Quadri",
-        age:15,
-        hobby:"Footballing"
+        name:" ",
+        age:"",
+        hobby:""
     })
   return (
     <div>
