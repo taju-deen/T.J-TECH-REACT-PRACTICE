@@ -10,11 +10,11 @@ const CounterEffect = () => {
     }
 
     useEffect(()=>{
-        count?document.title=count:""
+        count?document.title="Count"+count:""
     },[count])
   return (
     <div><h1>{count}</h1>
-    <button onClick={increment}>Click me</button>
+          <button onClick={increment}>Click me</button>
     </div>
   )
 }

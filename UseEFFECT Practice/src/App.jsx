@@ -2,6 +2,7 @@
 
 import BasicEffect from './BasicEffect.jsx'
 import CounterEffect from './CounterEffect.jsx'
+import Fetchdata from './Fetchdata.jsx'
 
 
 const App = () => {
@@ -10,7 +11,8 @@ const App = () => {
   return (
     <div>
       <BasicEffect/>
-      <CounterEffect></CounterEffect>
+      <CounterEffect/>
+      <Fetchdata/>
     </div>
   )
 }
