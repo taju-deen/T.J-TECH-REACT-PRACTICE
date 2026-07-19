@@ -26,10 +26,10 @@ const Reset=()=>{
         
         
         <div style={{fontSize:"2rem",color:"white"}}>{count}</div>
-        <div style={{display:"flex",gap:"2rem",marginTop:"2rem"}}>
-            <button onClick={increment} >Increment</button>
-             <button onClick={decrement}>Decrement</button> 
-             <button onClick={Reset}>Reset</button>
+        <div style={{display:"flex",gap:"1rem",marginTop:"2rem",justifyContent:"space-around"}}>
+             <button  style={{padding:"0.5em",borderRadius:"10px"}} onClick={decrement}>Decrement</button> 
+             <button style={{padding:"0.5em",borderRadius:"10px",fontWeight:"3rem"}}onClick={Reset}>Reset</button>
+            <button style={{padding:"0.5rem",borderRadius:"10px",fontWeight:"3rem"}} onClick={increment} >Increment</button>
         </div>
 
     </div>
