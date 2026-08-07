@@ -18,13 +18,22 @@ const Todolist = () => {
   const newtodo={
     id:Date.now(),
     name:inputValue,
-    Time:date
+    completed:false
   }
 
   function handleClick(){
     setTodo([...Todo, newtodo])
     setinputValue("")
 
+  }
+  const remove=(id)=>{
+setTodo(Todo.filter((one)=>{one.id
+  !==id
+}))
+   
+  }
+  const deletecompletedTask=()=>{
+    
   }
 
   return (
@@ -69,7 +78,7 @@ const Todolist = () => {
             <ul key={id}>
                <div>
               <li><div><span className='box'></span> <span className='name'>{name}</span> </div> 
-              <div><span><IoMdTime /> <h1>{id}</h1></span>   <MdDelete /></div></li>
+              <div><span><IoMdTime /> <h1>{id}</h1></span>   <MdDelete onClick={remove} /></div></li>
                
               
                </div>
