@@ -19,7 +19,7 @@ const Calculator = () => {
     })
   return (
     <div className='Overall-container'>
-        <h1> T.J TECH Calculator</h1>
+        <h1> T.J TECH Calculator </h1>
         <input type="text" className='input-answer' value={input} />
         <input type="text" className='input' value={one} />
 
