@@ -1,101 +1,216 @@
-import React from 'react'
-import { SlCheck } from "react-icons/sl";
-import { CiLight } from 'react-icons/ci'
-import { MdDelete } from "react-icons/md";
-import { IoMdTime } from "react-icons/io";
-import { useState } from 'react';
+import { useState } from "react";
+import { FaCheck, FaTrash } from "react-icons/fa";
+import './App.css'
 
-const Todolist = () => {
 
-  const [inputValue,setinputValue]= useState("")
-  const[Todo,setTodo]=useState([])
-  const[date,setDate]=useState(Date.now())
 
-  const handleChange=(e)=>{
-   setinputValue(e.target.value)
-  }
+function App() {
+  const [task, setTask] = useState("");
+  const [todos, setTodos] = useState([]);
+  const [filter, setFilter] = useState("all");
 
-  const newtodo={
-    id:Date.now(),
-    name:inputValue,
-    completed:false
-  }
+  // Add Todo
+  const addTodo = () => {
+    if (!task.trim()) return;
 
-  function handleClick(){
-    setTodo([...Todo, newtodo])
-    setinputValue("")
+    const newTodo = {
+      id: Date.now(),
+      text: task,
+      date: new Date().toLocaleDateString(),
+      completed: false,
+    };
 
-  }
-  const remove=(id)=>{
-setTodo(Todo.filter((one)=>{one.id
-  !==id
-}))
-   
-  }
-  const deletecompletedTask=()=>{
-    
-  }
+    setTodos([...todos, newTodo]);
+    setTask("");
+  };
+
+  // Delete Todo
+  const deleteTodo = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
+  };
+
+  // Complete / Uncomplete Todo
+  const toggleTodo = (id) => {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id
+          ? {
+              ...todo,
+              completed: !todo.completed,
+            }
+          : todo
+      )
+    );
+  };
+
+  // Filter Todos
+  const filteredTodos = todos.filter((todo) => {
+    if (filter === "active") {
+      return !todo.completed;
+    }
+
+    if (filter === "completed") {
+      return todo.completed;
+    }
+
+    return true;
+  });
 
   return (
-    
+    <div className="app">
+      <div className="todo-container">
 
-    <div className="overall">
-      <div className="overall-top">
-        <div className="top-left">
+        {/* Header */}
+        <div className="header">
           <div>
-             <SlCheck />
+            <h1>My To-Do List</h1>
+            <p>Stay organized and get things done.</p>
           </div>
-           <div className='middle-top-content'>
-             <h1>My To-DoList</h1>
-             <p>stay organised and get things done!</p>
-           </div>
+
+          <button className="theme-btn">
+            ☀
+          </button>
         </div>
-         <div>
-            <CiLight/>
-         </div>
-      </div>
-      <div className="middle">
-        <input type="text" value={inputValue}  onChange={handleChange} placeholder='What did you need to do-'/>
-        <button onClick={handleClick}>Add Task</button>
-      </div>
 
-      <div className='last-one'>
-        <div className="left-one">
-          <p>All</p>
-          <p>Active</p>
-          <p>Completed</p>
+        {/* Input */}
+        <div className="input-section">
+          <input
+            type="text"
+            placeholder="What needs to be done?"
+            value={task}
+            onChange={(e) => setTask(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                addTodo();
+              }
+            }}
+          />
+
+          <button onClick={addTodo}>
+            Add Task
+          </button>
         </div>
-        <div  className='right-one'>
-          <p>Clear Completed</p>
-          <MdDelete />
+
+        {/* Filters */}
+        <div className="filters">
+
+          <button
+            className={filter === "all" ? "active" : ""}
+            onClick={() => setFilter("all")}
+          >
+            All
+          </button>
+
+          <button
+            className={filter === "active" ? "active" : ""}
+            onClick={() => setFilter("active")}
+          >
+            Active
+          </button>
+
+          <button
+            className={filter === "completed" ? "active" : ""}
+            onClick={() => setFilter("completed")}
+          >
+            Completed
+          </button>
 
         </div>
- 
+
+        {/* Todo List */}
+        <div className="todo-list">
+
+          {filteredTodos.map((todo) => (
+
+            <div
+              className="todo-item"
+              key={todo.id}
+            >
+
+              {/* Check Button */}
+              <button
+                className={
+                  todo.completed
+                    ? "check checked"
+                    : "check"
+                }
+                onClick={() => toggleTodo(todo.id)}
+              >
+                {todo.completed && <FaCheck />}
+              </button>
+
+              {/* Todo Text */}
+              <div className="todo-content">
+
+                <span
+                  className={
+                    todo.completed
+                      ? "completed"
+                      : ""
+                  }
+                >
+                  {todo.text}
+                </span>
+
+                <small>
+                  📅 {todo.date}
+                </small>
+
+              </div>
+
+              {/* Delete Button */}
+              <button
+                className="delete"
+                onClick={() => deleteTodo(todo.id)}
+              >
+                <FaTrash />
+              </button>
+
+            </div>
+          ))}
+
+          {/* Empty Message */}
+          {filteredTodos.length === 0 && (
+            <p className="empty-message">
+              No tasks found.
+            </p>
+          )}
+
+        </div>
+
+        {/* Footer */}
+        <div className="footer">
+
+          <span>
+            You have{" "}
+            {
+              todos.filter(
+                (todo) => !todo.completed
+              ).length
+            }{" "}
+            tasks left
+          </span>
+
+          <span>
+            {
+              todos.filter(
+                (todo) => !todo.completed
+              ).length
+            }{" "}
+            Active •{" "}
+            {
+              todos.filter(
+                (todo) => todo.completed
+              ).length
+            }{" "}
+            Completed
+          </span>
+
+        </div>
+
       </div>
-
-      
-        {Todo.map(({name,id})=>(
-            <ul key={id}>
-               <div>
-              <li><div><span className='box'></span> <span className='name'>{name}</span> </div> 
-              <div><span><IoMdTime /> <h1>{id}</h1></span>   <MdDelete onClick={remove} /></div></li>
-               
-              
-               </div>
-              
-            </ul>
-        )
-
-        )}
-        
-     
     </div>
-
-        
-
-        
-    
-  )
+  );
 }
 
-export default Todolist
+export default App;
