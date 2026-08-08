@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { FaCheck, FaTrash } from "react-icons/fa";
-import './App.css'
-
-
+import "./App.css";
 
 function App() {
   const [task, setTask] = useState("");

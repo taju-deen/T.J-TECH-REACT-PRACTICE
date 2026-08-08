@@ -56,7 +56,7 @@ button {
   color: #4033a0;
   font-size: 15px;
   font-weight: 500;
-  font-weight: ;
+  
 }
 
 .theme-btn {
@@ -197,7 +197,7 @@ button {
 
 .completed {
   text-decoration: line-through;
-  color: #aaa !important;
+  color: #827373aa;
 }
 
 /* Delete Button */
