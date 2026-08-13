@@ -1,0 +1,70 @@
+.category-section, .colors-section, .price-section{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 0.7rem;
+    
+     
+}
+.category-section h1, .colors-section h1, .price-section h1{
+    font-size: 1rem;
+    font-weight: 600;
+    color: #524e4e;
+}
+
+.category-section input[type="radio"], .colors-section input[type="radio"], .price-section input[type="radio"]{
+    margin-right: 7px;
+}
+.category-section input[type="radio"]:checked + label{
+    color: #524e4e;
+    font-weight: 600;
+}
+.category-section input, .colors-section input, .price-section input{
+    position: relative;
+}
+.category-section label,.colors-section label , .price-section label{
+    color: #524e4e;
+    cursor: pointer;
+    font-size: 0.8rem;
+    position:absolute;
+    
+}
+.category-section .all-category, .colors-section .all-colors, .price-section .all-price{
+    display: flex;
+    flex-direction: column;
+    gap: 2px
+  
+}
+.category-section .sub-category input[type="radio"], .colors-section .sub-category input[type="radio"], .price-section .sub-category input[type="radio"]{
+     
+   appearance: none;
+  width: 13px;
+  height: 13px;
+  background-color: #dfd8d8;
+
+  border-radius: 50%;
+  
+
+   
+}
+.category-section .sub-category input[type="radio"]:checked {
+  
+
+}
+.colors-section .sub-category input#Red{
+  background-color: rgb(205, 10, 10);
+}
+
+.colors-section .sub-category input#Blue{
+  background-color: rgb(0, 0, 255);
+}
+.colors-section .sub-category input#Green{
+  background-color: rgb(0, 255, 0);
+}
+
+.colors-section .sub-category input#Black{
+  background-color:black;
+}
+.colors-section .sub-category input#All{
+  background-color: brown;
+}
