@@ -43,11 +43,32 @@
   background-color: #dfd8d8;
 
   border-radius: 50%;
+  position: relative;
   
-
    
 }
-.category-section .sub-category input[type="radio"]:checked {
+
+.category-section .sub-category input[type="radio"]:after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background-color: blue;
+  position: absolute;
+  border-radius: 50%;
+  
+  top: 19%;
+  left: 2.5px;
+  display: none;
+  
+}
+
+
+
+
+.category-section .sub-category input[type="radio"]:checked::after,.price-section .sub-category input[type="radio"]:after{
+  display: block;
+
+
   
 
 }

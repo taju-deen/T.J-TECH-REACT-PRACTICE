@@ -1,5 +1,8 @@
 import React from 'react'
-
+import { CiHeart } from "react-icons/ci";
+import { IoMdCart } from "react-icons/io";
+import { RiContactsLine } from "react-icons/ri";
+import "./Rightmenu.css"
 
 const Menu = () => {
   return (
@@ -8,6 +11,9 @@ const Menu = () => {
 
         <div className="react-icons">
 
+          <CiHeart />
+          <IoMdCart />
+          <RiContactsLine />
 
         </div>
 

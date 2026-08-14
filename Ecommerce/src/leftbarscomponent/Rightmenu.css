@@ -1,0 +1,84 @@
+.Top-menu{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    margin-left: 3rem;
+}
+
+.Top-menu input{
+    font-size: 0.7rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 4px 12px;
+    outline: none;
+    
+
+}
+
+.Top-menu input:focus{
+    border-color: rgb(181, 181, 200);
+    box-shadow: 0 0 5px rgba(208, 208, 238, 0.2);
+}
+
+.Top-menu .react-icons{
+    display: flex;
+    margin-right: 3rem;
+    gap: 0.5rem;
+    color: #716d65fd;
+    font-size: 1rem;
+}
+
+.recommended{
+    font-size: 1rem; 
+}
+.recommended h1{
+    margin-bottom: 0.7rem;
+    font-size: 1.2rem;
+}
+
+.recommended button{
+    padding: 2px 3px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 0.7rem;
+    outline: none;
+    border-radius: 5px;
+    background-color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: rgb(96, 97, 99);
+    border: 2px solid #ddd;
+}
+.recommended button:hover{
+    background-color: rgba(124, 143, 181, 0.623);
+    color: black;
+}
+
+.recommended button:active{
+    transform: scale(0.98);
+}
+.cards{
+    display: flex;
+    gap: 1rem;
+   
+    flex-wrap: wrap;
+
+}
+
+.cards .card{
+    
+    width: 9.5rem;
+    padding: 1rem;
+    font-size: 0.7rem;
+    box-shadow: 0px 0px 5px  rgba(208, 208, 238, 0.7);
+}
+
+.cards .card img{
+  height: 4rem; 
+  width: 100%;
+  margin-bottom: 5px;
+}
+.cards .card h3{
+    font-size: 0.7rem;
+    
+}
