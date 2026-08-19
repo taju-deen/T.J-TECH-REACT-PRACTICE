@@ -1,24 +1,29 @@
-import React from 'react'
+import React from "react";
 import { CiHeart } from "react-icons/ci";
 import { IoMdCart } from "react-icons/io";
 import { RiContactsLine } from "react-icons/ri";
-import "./Rightmenu.css"
+import "./Rightmenu.css";
 
-const Menu = () => {
+const Menu = ({ search, setSearch }) => {
+
   return (
     <div className="Top-menu">
-        <input type="text" placeholder="Enter Your Search Shoes" />
 
-        <div className="react-icons">
+      <input
+        type="text"
+        placeholder="Enter Your Search Shoes"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+      />
 
-          <CiHeart />
-          <IoMdCart />
-          <RiContactsLine />
-
-        </div>
+      <div className="react-icons">
+        <CiHeart />
+        <IoMdCart />
+        <RiContactsLine />
+      </div>
 
     </div>
-  )
-}
+  );
+};
 
-export default Menu
+export default Menu;

@@ -48,7 +48,7 @@
    
 }
 
-.category-section .sub-category input[type="radio"]:after {
+.nedd:after {
   content: "";
   width: 8px;
   height: 8px;
@@ -58,7 +58,7 @@
   
   top: 19%;
   left: 2.5px;
-  display: none;
+  
   
 }
 
@@ -69,7 +69,6 @@
   display: block;
 
 
-  
 
 }
 .colors-section .sub-category input#Red{

@@ -66,19 +66,51 @@
 }
 
 .cards .card{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
     
-    width: 9.5rem;
+    width: 10.5rem;
     padding: 1rem;
     font-size: 0.7rem;
     box-shadow: 0px 0px 5px  rgba(208, 208, 238, 0.7);
 }
 
 .cards .card img{
-  height: 4rem; 
+  height: 5rem; 
   width: 100%;
   margin-bottom: 5px;
 }
 .cards .card h3{
     font-size: 0.7rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
     
 }
+.cards .card .reviews{
+    display: flex;
+    gap: 0.4rem;
+    
+}
+
+.cards .card .reviews .all-stars{
+    display: flex;
+    color: #bbb;
+}
+.cards .card .price{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.cards .card .price .sub-price{
+    display: flex;
+    gap: 0.4rem;
+}
+
+
+.cards .card .price .sub-price p:nth-child(1){
+    text-decoration: line-through
+    ;}
+
+
+
+
