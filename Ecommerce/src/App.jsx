@@ -9,6 +9,7 @@ import "./App.css";
 import { FaCartArrowDown } from "react-icons/fa";
 
 const App = () => {
+  const [selectedCompany, setSelectedCompany] = useState("All");
   const [selectedColor, setSelectedColor] = useState("All");
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedPrice, setSelectedPrice] = useState("All");
@@ -45,13 +46,14 @@ const App = () => {
           setSearch={setSearch}
         />
 
-        <Recommended />
+        <Recommended setSelectedCompany={setSelectedCompany} />
 
         <Product
           selectedColor={selectedColor}
           selectedCategory={selectedCategory}
           selectedPrice={selectedPrice}
           search={search}
+          selectedCompany={selectedCompany}
         />
 
       </section>

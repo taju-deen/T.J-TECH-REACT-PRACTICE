@@ -249,17 +249,7 @@ const data = [
     color: "red",
     category: "heels",
   },
-  {
-    img: "https://m.media-amazon.com/images/I/519MRhRKGFL._AC_UX575_.jpg",
-    title: "Nike Air Vapormax Plus",
-    star: <AiFillStar className="rating-star" />,
-    reviews: "(123 reviews)",
-    prevPrice: "$140,00",
-    newPrice: "200",
-    company: "Nike",
-    color: "red",
-    category: "sneakers",
-  },
+
 
   {
     img: "https://m.media-amazon.com/images/I/51PGWTXgf-L._AC_UY625_.jpg",
@@ -273,17 +263,8 @@ const data = [
     category: "heels",
   },
   {
-    img: "https://m.media-amazon.com/images/I/616sA5XUKtL._AC_UY675_.jpg",
-    title: "Chunky High Heel",
-    star: <AiFillStar className="rating-star" />,
-    reviews: "(123 reviews)",
-    prevPrice: "$140,00",
-    newPrice: "50",
-    company: "Adidas",
-    color: "black",
-    category: "heels",
-  },
-  {
+    
+  
     img: "https://m.media-amazon.com/images/I/71h5+MbEK7L._AC_UY625_.jpg",
     title: "Amore Fashion Stilettos",
     star: <AiFillStar className="rating-star" />,

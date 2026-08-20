@@ -7,11 +7,17 @@ const Product = ({
   selectedColor,
   selectedCategory,
   selectedPrice,
-  search
+  search,selectedCompany
 }) => {
 
+ 
+
   const display = data.filter(
-    ({ color, category, newPrice, title }) => {
+    ({ color, category, newPrice, title,company }) => {
+
+      const companyMatch =
+  selectedCompany === "All" ||
+  company.toLowerCase() === selectedCompany.toLowerCase();
 
       // COLOR
       const colorMatch =
@@ -50,61 +56,52 @@ const Product = ({
       // SEARCH
       const searchMatch =
         title.toLowerCase().includes(search.toLowerCase());
-
+           
 
       return (
         colorMatch &&
         categoryMatch &&
         priceMatch &&
-        searchMatch
+        searchMatch && companyMatch
       );
     }
   );
 
+ 
+
 
   return (
-    <div className="cards">
+    <div className="all">
+              <h2>Total products:{display.length}</h2>
+      <div className="cards">
 
-      {display.map(
-        ({ img, title, star, reviews, prevPrice, newPrice }) => (
-
-          <div className="card" key={title}>
-
-            <img src={img} alt={title} />
-
-            <h3>{title}</h3>
-
-            <div className="reviews">
-
-              <div className="all-stars">
-                <p>{star}</p>
-                <p>{star}</p>
-                <p>{star}</p>
-                <p>{star}</p>
+        {display.map(
+          ({ img, title, star, reviews, prevPrice, newPrice }) => (
+            <div className="card" key={title}>
+              <img src={img} alt={title} />
+              <h3>{title}</h3>
+              <div className="reviews">
+                <div className="all-stars">
+                  <p>{star}</p>
+                  <p>{star}</p>
+                  <p>{star}</p>
+                  <p>{star}</p>
+                </div>
+                <p>{reviews}</p>
               </div>
-
-              <p>{reviews}</p>
-
+              <div className="price">
+                <div className="sub-price">
+                  <p>{prevPrice}</p>
+                  <p>{newPrice}</p>
+                </div>
+                <div>
+                  <FaLock />
+                </div>
+              </div>
             </div>
-
-            <div className="price">
-
-              <div className="sub-price">
-                <p>{prevPrice}</p>
-                <p>{newPrice}</p>
-              </div>
-
-              <div>
-                <FaLock />
-              </div>
-
-            </div>
-
-          </div>
-
-        )
-      )}
-
+          )
+        )}
+      </div>
     </div>
   );
 };
